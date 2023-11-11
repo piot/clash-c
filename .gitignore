@@ -1,3 +1,5 @@
+.cmake/
+Testing/
 deps*/
 /tests/temp
 /tests/mocha
@@ -15,3 +17,5 @@ olddependencies/
 
 src/examples/clash-example
 src/lib/libclash.a
+.ninja*
+build.ninja

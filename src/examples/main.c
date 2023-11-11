@@ -63,7 +63,7 @@ static ClashCommand mainCommands[] = { { "record", "recording commands", 0, 0, 0
 static ClashDefinition definition
     = { mainCommands, sizeof(mainCommands) / sizeof(mainCommands[0]) };
 
-int main(int argc, char* argv[])
+int main(int argc, const char* argv[])
 {
     g_clog.log = clog_console;
 
@@ -75,12 +75,11 @@ int main(int argc, char* argv[])
         adjustedArgs = (const char**)arguments;
         adjustedCount = sizeof(arguments) / sizeof(arguments[0]);
     } else {
-        const char* ptr = argv[1];
-        adjustedArgs = (const char**)&ptr;
+        adjustedArgs = (const char**)&argv[1];
         adjustedCount = argc - 1;
     }
 
-    struct ClashDefinition* def = &definition;
+    ClashDefinition* def = &definition;
 
     char usageBuf[512];
     printf("usage:\n%s\n", clashUsage(def, usageBuf, 512));
