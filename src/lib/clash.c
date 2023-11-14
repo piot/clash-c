@@ -154,8 +154,6 @@ static void selectCommand(struct ClashState* state, const struct ClashCommand* c
         state->values.values[i].count = 0;
         state->values.values[i].value = command->options[i].value;
     }
-
-    // printf("select command '%s'\n", command->name);
 }
 
 static int parseArg(ClashState* state, const char* value)
@@ -325,7 +323,6 @@ int clashParse(const ClashDefinition* definition, const char** argv, int argc, v
     }
 
     clashResponseResetColor(&response);
-    fldOutStreamWriteUInt8(responseStream, '\n');
     fldOutStreamWriteUInt8(responseStream, 0);
 
     return 0;

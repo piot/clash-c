@@ -8,14 +8,10 @@ deps*/
 out/
 .idea
 .vscode
-
 output/
-
+build/
 index.*
-
-olddependencies/
-
 src/examples/clash-example
-src/lib/libclash.a
+*.a
 .ninja*
 build.ninja
