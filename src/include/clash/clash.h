@@ -12,10 +12,10 @@ struct FldOutStream;
 
 typedef int ClashOptionType;
 
-const static ClashOptionType ClashTypeString = 0x01;
-const static ClashOptionType ClashTypeInt = 0x02;
-const static ClashOptionType ClashTypeFlag = 0x03;
-const static ClashOptionType ClashTypeArg = 0x08;
+#define ClashTypeString (0x01)
+#define ClashTypeInt (0x02)
+#define ClashTypeFlag (0x03)
+#define ClashTypeArg (0x08)
 
 typedef struct ClashOption {
     const char* name;
