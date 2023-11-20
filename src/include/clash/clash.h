@@ -15,6 +15,7 @@ typedef int ClashOptionType;
 #define ClashTypeString (0x01)
 #define ClashTypeInt (0x02)
 #define ClashTypeFlag (0x03)
+#define ClashTypeUInt64 (0x04)
 #define ClashTypeArg (0x08)
 
 typedef struct ClashOption {

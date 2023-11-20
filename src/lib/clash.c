@@ -229,6 +229,17 @@ static void clashStateInit(struct ClashState* state)
     tc_mem_clear_type(state);
 }
 
+static uint64_t toUInt64(const char* s)
+{
+    int base = 10;
+    if (s[0] == '0' && (s[1] == 'x' || s[1] == 'X')) {
+        base = 16;
+        s += 2;
+    }
+
+    return tc_str_to_uint64(s, base);
+}
+
 static void* convertToStruct(const ClashCommand* command, const ClashStructValues* values)
 {
     uint8_t* data = tc_malloc(command->structSize);
@@ -244,6 +255,9 @@ static void* convertToStruct(const ClashCommand* command, const ClashStructValue
         switch (option->type & 0x7) {
         case ClashTypeInt:
             *((int*)p) = atoi(value);
+            break;
+        case ClashTypeUInt64:
+            *((uint64_t*)p) = toUInt64(value);
             break;
         case ClashTypeString:
             *((const char**)p) = value;
