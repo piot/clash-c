@@ -17,6 +17,7 @@ typedef int ClashOptionType;
 #define ClashTypeFlag (0x03)
 #define ClashTypeUInt64 (0x04)
 #define ClashTypeArg (0x08)
+#define ClashTypeBool (0x10)
 
 typedef struct ClashOption {
     const char* name;

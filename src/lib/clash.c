@@ -253,6 +253,9 @@ static void* convertToStruct(const ClashCommand* command, const ClashStructValue
         }
 
         switch (option->type & 0x7) {
+        case ClashTypeBool:
+            *((bool*)p) = item->count != 0;
+            break;
         case ClashTypeInt:
             *((int*)p) = atoi(value);
             break;
